@@ -19,10 +19,10 @@ import javax.swing.JTextField;
  * @author Andrea Palomo
  */
 public class Composicion extends JFrame{
-    private JTextField caja1;
+    private JTextField caja1;//se coloca un espacio de texto llamado TextField
     private JTextField caja2;
     private JTextField caja3;
-    private JButton botonmas;
+    private JButton botonmas;//son los botones a utilizar en el programa
     private JButton botonmenos;
     private JButton botondiv;
     private JButton botonmul;
@@ -30,13 +30,13 @@ public class Composicion extends JFrame{
     private String a;
     private int r;
         public Composicion() {
-      setLayout(new FlowLayout());
+        setLayout(new FlowLayout());//la ventana puede cambiar de posición si el usuario lo desea *en este caso lo dejé así
         JLabel L1=new JLabel("Número 1:");
-        add(L1);
+        add(L1);//coloca un string no editable en la ventana
         caja1= new JTextField(6);
-        caja1.setBounds(25,100,200,25);
-        add(caja1);
-        caja1.setBackground(Color.ORANGE);
+        caja1.setBounds(25,100,200,25);//se podría colocar el lugar de posición en la ventana pero no lo toma en cuenta al 
+        add(caja1);//usar el new FlowLayout
+        caja1.setBackground(Color.ORANGE);//el color de cada TextField será naranja
         JLabel L2=new JLabel("Número 2:");
         add(L2);
         caja2= new JTextField(6);
@@ -61,7 +61,7 @@ public class Composicion extends JFrame{
         botonigual=new JButton(" = ");
         add(botonigual);
         Accionar manejo=new Accionar();
-        botonmas.addActionListener(manejo);
+        botonmas.addActionListener(manejo);//llama a cada uno de los botones para que al presionarlos realicen un evento
         botonmenos.addActionListener(manejo);
         botondiv.addActionListener(manejo);
         botonmul.addActionListener(manejo);
@@ -74,12 +74,12 @@ public class Composicion extends JFrame{
         private class Accionar implements ActionListener{
 
         @Override
-        public void actionPerformed(ActionEvent ae) {
+        public void actionPerformed(ActionEvent ae) {//el evento que se realizará al presionar cada botón.
            
             if(ae.getSource()==botonmas){
-                r=(Integer.parseInt(caja1.getText()))+((Integer.parseInt(caja2.getText())));
-                a=String.valueOf(r);
-                caja3.setText(a);
+                r=(Integer.parseInt(caja1.getText()))+((Integer.parseInt(caja2.getText())));//cambia un string a int para hacer la operación
+                a=String.valueOf(r);//cambia el resultado a un string para que lo coloque en el resultado
+                caja3.setText(a);//el resultado lo imprimirá en el el TextField número 3 donde dice resultados
             }else if(ae.getSource()==botonmenos){
                 r=(Integer.parseInt(caja1.getText()))-((Integer.parseInt(caja2.getText())));
                 a=String.valueOf(r);
@@ -98,7 +98,7 @@ public class Composicion extends JFrame{
                 }
             }else if(ae.getSource()==botonigual){
                 if((Integer.parseInt(caja1.getText()))==((Integer.parseInt(caja2.getText())))){
-                    caja3.setText("N1 y N2 son iguales");
+                    caja3.setText("N1 y N2 son iguales");//mostrará si el valor 1 y el valor 2 ingresado son o no iguales.
                 }else{
                     caja3.setText("N1 y N2 no son iguales");
                 }

@@ -6,7 +6,7 @@
 package calculador;
 
 import java.awt.Color;
-import java.awt.FlowLayout;
+import java.awt.FlowLayout;//paquetes del frame
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -22,11 +22,13 @@ public class Calculador {
        public static void main(String[] args) {
         
         
-        Composicion obj=new Composicion();
-        obj.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE);
-        obj.getContentPane().setBackground(Color.YELLOW);
-        obj.setSize(500,150);
-        obj.setLocationRelativeTo(null);
-        obj.setVisible(true);
+        Composicion obj=new Composicion();//en la composición se encuentra todo el procedimiento de cada objeto
+        obj.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE);//se utiliza para salir por medio del ícono "x"
+        obj.getContentPane().setBackground(Color.YELLOW);//se le coloca el color de fondo de la calculadora
+        // obj.setLayout(null);
+        obj.setTitle("CALCULADORA");
+        obj.setSize(500,150);//el tamaño de la ventana
+        obj.setLocationRelativeTo(null);//coloca la ventana al centro de la pantalla al ejecutar
+        obj.setVisible(true);//al ser verdadero se ejecutará el frame
        }
 }
